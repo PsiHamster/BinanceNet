@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BinanceNet.Categories {
-    public interface IDepthBook : IDisposable {
+namespace BinanceNet.Utils {
+    class WebProxy : IWebProxy {
     }
 }

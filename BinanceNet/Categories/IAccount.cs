@@ -7,7 +7,7 @@ using BinanceNet.Model;
 using BinanceNet.Model.EventArgs;
 
 namespace BinanceNet.Categories {
-    public interface IAccount {
+    public interface IAccount : IDisposable {
         /// <summary>
         /// Try to authorize application with token.
         /// </summary>

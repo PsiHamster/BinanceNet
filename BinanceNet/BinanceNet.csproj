@@ -34,7 +34,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Compile Include="BinanceClient.cs" />
     <Compile Include="Categories\Account.cs" />
@@ -89,8 +88,12 @@
     <Compile Include="Utils\Browser.cs" />
     <Compile Include="Utils\IApiResponse.cs" />
     <Compile Include="Utils\IBrowser.cs" />
+    <Compile Include="Utils\IWebProxy.cs" />
     <Compile Include="Utils\IWebSocketListener.cs" />
     <Compile Include="Utils\WebSocketListener.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

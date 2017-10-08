@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using BinanceNet.Categories;
@@ -16,6 +17,8 @@ namespace BinanceNet {
     public interface IBinanceClient {
 
         bool IsAuthorized { get; }
+
+        IWebProxy WebProxy { get; set; }
 
         #region Events
         
@@ -66,7 +69,7 @@ namespace BinanceNet {
         Task<IDepthBook> GetDepthBookAsync(DepthBookParams @params);
 
         /// <summary>
-        /// Get compressed, aggregate trades.
+        /// Get compressed, aggregate trades for a symbol.
         /// Trades that fill at the time, from the same order,
         /// with the same price will have the quantity aggregated.
         /// </summary>
@@ -91,10 +94,13 @@ namespace BinanceNet {
 
         #endregion
 
-        #region Authorized commands
-
+        /// <summary>
+        /// Get Account object to token that allows you to control
+        /// open / closed orders.
+        /// </summary>
+        /// <param name="token">API-KEY that you can get on https://www.binance.com/userCenter/createApi.html page</param>
+        /// <returns></returns>
         Task<IAccount> GetAccountAsync(string token);
         
-        #endregion
     }
 }
