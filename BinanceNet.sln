@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.9
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinanceNet", "BinanceNet\BinanceNet.csproj", "{1B713122-4F50-4443-94C0-6747C419A6D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinanceNet.Tests", "BinanceNet.Tests\BinanceNet.Tests.csproj", "{2AC8E22F-AF48-46A1-8D99-BA9803EA9682}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinanceContestExample", "sandbox\BinanceContestExample\BinanceContestExample.csproj", "{87B0C00E-8504-4A94-9D1A-6118D03228A8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1B713122-4F50-4443-94C0-6747C419A6D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B713122-4F50-4443-94C0-6747C419A6D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B713122-4F50-4443-94C0-6747C419A6D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B713122-4F50-4443-94C0-6747C419A6D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AC8E22F-AF48-46A1-8D99-BA9803EA9682}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AC8E22F-AF48-46A1-8D99-BA9803EA9682}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AC8E22F-AF48-46A1-8D99-BA9803EA9682}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AC8E22F-AF48-46A1-8D99-BA9803EA9682}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87B0C00E-8504-4A94-9D1A-6118D03228A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87B0C00E-8504-4A94-9D1A-6118D03228A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87B0C00E-8504-4A94-9D1A-6118D03228A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87B0C00E-8504-4A94-9D1A-6118D03228A8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1B713122-4F50-4443-94C0-6747C419A6D1}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>BinanceNet</RootNamespace>
+    <AssemblyName>BinanceNet</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Compile Include="BinanceClient.cs" />
+    <Compile Include="Categories\Account.cs" />
+    <Compile Include="Categories\CandleSticks.cs" />
+    <Compile Include="Categories\DepthBook.cs" />
+    <Compile Include="Categories\IAccount.cs" />
+    <Compile Include="Categories\ICandleSticks.cs" />
+    <Compile Include="Categories\IDepthBook.cs" />
+    <Compile Include="Categories\IOrderBook.cs" />
+    <Compile Include="Categories\ITradeHistory.cs" />
+    <Compile Include="Categories\OrderBook.cs" />
+    <Compile Include="Categories\TradeHistory.cs" />
+    <Compile Include="Enums\KlineInterval.cs" />
+    <Compile Include="Enums\OrderSide.cs" />
+    <Compile Include="Enums\OrderStatus.cs" />
+    <Compile Include="Enums\OrderType.cs" />
+    <Compile Include="Enums\SecurityType.cs" />
+    <Compile Include="Enums\SymbolType.cs" />
+    <Compile Include="Enums\TimeInForce.cs" />
+    <Compile Include="Exception\ApiException.cs" />
+    <Compile Include="Exception\UnauthorizedException.cs" />
+    <Compile Include="IBinanceClient.cs" />
+    <Compile Include="Model\AccountBalanceEntry.cs" />
+    <Compile Include="Model\AccountInformation.cs" />
+    <Compile Include="Model\AccountTradeEntry.cs" />
+    <Compile Include="Model\EventArgs\AccountUpdateArgs.cs" />
+    <Compile Include="Model\EventArgs\OrderUpdateArgs.cs" />
+    <Compile Include="Model\EventArgs\ReceiveErrorEventArgs.cs" />
+    <Compile Include="Model\EventArgs\TradeUpdateArgs.cs" />
+    <Compile Include="Model\RequestResponse\AllBookTickersResponse.cs" />
+    <Compile Include="Model\RequestResponse\OrderCancelResponse.cs" />
+    <Compile Include="Model\RequestResponse\OrderCreateResponse.cs" />
+    <Compile Include="Model\OrderQuery.cs" />
+    <Compile Include="Model\RequestParams\CandleSticksParams.cs" />
+    <Compile Include="Model\RequestParams\DepthBookParams.cs" />
+    <Compile Include="Model\OrderEntry.cs" />
+    <Compile Include="Model\CandleStick.cs" />
+    <Compile Include="Model\RequestParams\OrderCancelParams.cs" />
+    <Compile Include="Model\RequestParams\OrderCreateParams.cs" />
+    <Compile Include="Model\RequestParams\OrderQueryParams.cs" />
+    <Compile Include="Model\RequestResponse\PricesListResponse.cs" />
+    <Compile Include="Model\RequestResponse\Symbol24StatsResponse.cs" />
+    <Compile Include="Model\Trade.cs" />
+    <Compile Include="Model\RequestParams\TradeHistoryParams.cs" />
+    <Compile Include="Model\WebSocketEvent\AccountUpdateEvent.cs" />
+    <Compile Include="Model\WebSocketEvent\DepthBookEvent.cs" />
+    <Compile Include="Model\WebSocketEvent\KlineEvent.cs" />
+    <Compile Include="Model\WebSocketEvent\OrderUpdateEvent.cs" />
+    <Compile Include="Model\WebSocketEvent\TradeEvent.cs" />
+    <Compile Include="Model\WebSocketEvent\TradeUpdateEvent.cs" />
+    <Compile Include="Utils\ApiResponse.cs" />
+    <Compile Include="Utils\Browser.cs" />
+    <Compile Include="Utils\IApiResponse.cs" />
+    <Compile Include="Utils\IBrowser.cs" />
+    <Compile Include="Utils\IWebSocketListener.cs" />
+    <Compile Include="Utils\WebSocketListener.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
