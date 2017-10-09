@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace BinanceNet.Categories {
-    public interface IOrderBook : IDisposable {
+    public interface IOrderBook {
 
         ITradeList GetAccoundTradeList { get; }
 

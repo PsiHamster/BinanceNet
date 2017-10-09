@@ -8,7 +8,6 @@ using BinanceNet.Categories;
 using BinanceNet.Enums;
 using BinanceNet.Model;
 using BinanceNet.Model.EventArgs;
-using BinanceNet.Model.RequestResponse;
 using BinanceNet.Utils;
 
 namespace BinanceNet {
@@ -40,10 +39,10 @@ namespace BinanceNet {
         Task<bool> TestConnectionAsync();
 
         /// <summary>
-        /// Get Server DateTime object
+        /// Get ServerTime
         /// </summary>
-        /// <returns>Current time on server</returns>
-        Task<DateTime> GetServerTimeAsync();
+        /// <returns>Object contains server time in unix millis</returns>
+        Task<ServerTime> GetServerTimeAsync();
 
         /// <summary>
         /// Get latest price for all symbols

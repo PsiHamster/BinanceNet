@@ -1,4 +1,4 @@
 ﻿namespace BinanceNet.Model {
-    public struct Symbol24Stats {
+    public class Symbol24Stats {
     }
 }

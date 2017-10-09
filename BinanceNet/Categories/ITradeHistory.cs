@@ -5,6 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace BinanceNet.Categories {
-    public interface ITradeHistory : IDisposable {
+    public interface ITradeHistory {
     }
 }
