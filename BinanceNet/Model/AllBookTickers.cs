@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BinanceNet.Model.RequestResponse {
-    public class AllBookTickersResponse {
+namespace BinanceNet.Model {
+    public class AllBookTickers {
     }
 }

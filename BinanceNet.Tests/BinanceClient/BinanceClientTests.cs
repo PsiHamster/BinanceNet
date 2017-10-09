@@ -1,5 +1,5 @@
 ﻿using BinanceNet.Categories;
-using BinanceNet.Model.RequestParams;
+using BinanceNet.Model;
 using BinanceNet.Model.RequestResponse;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -32,7 +32,7 @@ namespace BinanceNet.Tests.BinanceClient {
 
             task.RunSynchronously();
 
-            Assert.IsInstanceOfType(task.Result, typeof(PricesListResponse));
+            Assert.IsInstanceOfType(task.Result, typeof(PricesList));
         }
 
         [TestMethod]
@@ -41,7 +41,7 @@ namespace BinanceNet.Tests.BinanceClient {
 
             task.RunSynchronously();
 
-            Assert.IsInstanceOfType(task.Result, typeof(AllBookTickersResponse));
+            Assert.IsInstanceOfType(task.Result, typeof(AllBookTickers));
         }
 
         [TestMethod]
@@ -72,7 +72,7 @@ namespace BinanceNet.Tests.BinanceClient {
         }
 
         public void GetSymbol24HrStatsTest() {
-            var task = client.GetSymbol24HrStatsAsync (Utils.TestsConfig.GetRandomPairToTest());
+            var task = client.GetSymbol24StatsAsync (Utils.TestsConfig.GetRandomPairToTest());
 
             task.RunSynchronously ();
 

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BinanceNet.Model.RequestParams {
-    public struct CandleSticksParams {
+namespace BinanceNet.Utils {
+    class WebRequester : IWebRequester {
     }
 }
