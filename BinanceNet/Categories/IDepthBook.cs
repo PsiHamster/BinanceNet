@@ -4,14 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BinanceNet.Model;
+using BinanceNet.Model.EventArgs;
 using BinanceNet.Model.WebSocketEvent;
 using BinanceNet.Utils;
 
 namespace BinanceNet.Categories {
     /// <summary>
     /// Class implements connection to depth book and contains bids/asks data.
-    /// You need to use <see cref="Start"/> method to start listening all trades.
-    /// If you don't need it use <see cref="Stop"/> to stop listen.
+    /// You need to use <see cref="StartListen"/> method to start listening all trades.
+    /// If you don't need it use <see cref="StopListen"/> to stop listen.
     /// Also you can subscribe to <see cref="OnDepthUpdate"/> to get orders change in real time.
     /// </summary>
     public interface IDepthBook {
@@ -38,7 +39,7 @@ namespace BinanceNet.Categories {
         /// <summary>
         /// Last Time when any event / data gotten from server
         /// </summary>
-        DateTime LastUpdateTime { get; }
+        DateTimeOffset LastUpdateTime { get; }
 
         /// <summary>
         /// All bids in depth book.

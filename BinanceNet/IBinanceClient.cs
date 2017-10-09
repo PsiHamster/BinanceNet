@@ -80,8 +80,8 @@ namespace BinanceNet {
         /// <param name="limit">Default 500; Max 500;</param>
         /// <returns>Interface with access to trade history of choosen symbol</returns>
         Task<ITradeHistory> GetTradeHistoryAsync(string symbol, long fromId,
-            DateTime? startTime = null,
-            DateTime? endTime = null,
+            DateTimeOffset? startTime = null,
+            DateTimeOffset? endTime = null,
             int limit = 500);
 
         /// <summary>
@@ -95,8 +95,8 @@ namespace BinanceNet {
         /// <param name="limit">Default 500; Max 500;</param>
         /// <returns>Interface with access to work with CandleSticks</returns>
         Task<ICandleSticks> GetCandleSticksAsync(string symbol, KlineInterval interval,
-            DateTime? startTime = null,
-            DateTime? endTime = null,
+            DateTimeOffset? startTime = null,
+            DateTimeOffset? endTime = null,
             int limit = 500);
 
         /// <summary>
