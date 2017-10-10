@@ -23,7 +23,7 @@ namespace BinanceNet.Tests.Utils {
 
         public static string[] PairsToTest => new string[] {"BTCETH", "LTCBTC" };
 
-        public static string GetRandomPairToTest() {
+        public static string GetPairToTest() {
             return PairsToTest[new Random().Next(0, PairsToTest.Length)];
         }
 

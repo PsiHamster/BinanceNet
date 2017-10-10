@@ -13,16 +13,19 @@ namespace BinanceNet.Tests.BinanceClient {
     public class DepthBookTests {
         public static IBinanceClient Client { get; set; }
         public static IDepthBook Book { get; set; }
+        public static string symbol { get; set; }
 
         [ClassInitialize]
         public static async void ClassInit(TestContext context) {
+            symbol = TestsConfig.GetPairToTest();
             Client = new BinanceNet.BinanceClient ();
-            Book = await Client.GetDepthBookAsync(TestsConfig.GetPairToTest());
+            Book = await Client.GetDepthBookAsync(symbol);
         }
 
         [TestMethod]
         public void IsBookGetted() {
             Assert.IsNotNull(Book);
+            Assert.AreEqual(symbol, Book.Symbol);
         }
 
         [TestMethod]
@@ -34,6 +37,13 @@ namespace BinanceNet.Tests.BinanceClient {
         [TestMethod]
         public void IsFirstBidLowerThanFirstAsk() {
             Assert.IsTrue(Book.Bids.First().Price < Book.Asks.First().Price);
+        }
+
+        [TestMethod]
+        public void IsRefreshWorksCorrectly() {
+            var lastUpdateTime = Book.LastUpdateTime;
+            Book.RefreshData();
+            Assert.AreNotEqual(lastUpdateTime, Book.LastUpdateTime);
         }
 
         [TestMethod]

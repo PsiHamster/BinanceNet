@@ -60,6 +60,7 @@
     <Compile Include="Model\AccountBalanceEntry.cs" />
     <Compile Include="Model\AccountInformation.cs" />
     <Compile Include="Model\AccountTradeEntry.cs" />
+    <Compile Include="Model\DepthBookData.cs" />
     <Compile Include="Model\EventArgs\AccountUpdateArgs.cs" />
     <Compile Include="Model\EventArgs\OrderUpdateArgs.cs" />
     <Compile Include="Model\EventArgs\ReceiveErrorEventArgs.cs" />
@@ -73,7 +74,7 @@
     <Compile Include="Model\Symbol24Stats.cs" />
     <Compile Include="Model\Trade.cs" />
     <Compile Include="Model\WebSocketEvent\AccountUpdateEvent.cs" />
-    <Compile Include="Model\WebSocketEvent\DepthBookEvent.cs" />
+    <Compile Include="Model\EventArgs\DepthBookEventArgs.cs" />
     <Compile Include="Model\WebSocketEvent\KlineEvent.cs" />
     <Compile Include="Model\WebSocketEvent\OrderUpdateEvent.cs" />
     <Compile Include="Model\WebSocketEvent\TradeEvent.cs" />

@@ -61,7 +61,7 @@ namespace BinanceNet {
         #region SymbolCommands
 
         /// <summary>
-        /// Get order book for choosed symbol
+        /// Get order book for choosed symbol.
         /// </summary>
         /// <param name="symbol">String contains name of trading pair e.g. BNBBTC </param>
         /// <param name="limit">Default 100; Max 100;</param>
@@ -74,15 +74,9 @@ namespace BinanceNet {
         /// with the same price will have the quantity aggregated.
         /// </summary>
         /// <param name="symbol">String contains name of trading pair e.g. BNBBTC </param>
-        /// <param name="fromId">ID to get aggregate trades from INCLUSIVE</param>
-        /// <param name="startTime">Timestamp in ms to get aggregate trades from INCLUSIVE.</param>
-        /// <param name="endTime">Timestamp in ms to get aggregate trades until INCLUSIVE.</param>
-        /// <param name="limit">Default 500; Max 500;</param>
+        /// <param name="limit">Limit of first request to site: default 500; Max 500;</param>
         /// <returns>Interface with access to trade history of choosen symbol</returns>
         Task<ITradeHistory> GetTradeHistoryAsync(string symbol,
-            long? fromId = null,
-            DateTimeOffset? startTime = null,
-            DateTimeOffset? endTime = null,
             int limit = 500);
 
         /// <summary>
@@ -93,11 +87,9 @@ namespace BinanceNet {
         /// <param name="interval">Choose type of <see cref="KlineInterval"/> that you need</param>
         /// <param name="startTime">Timestamp in ms to get aggregate trades from INCLUSIVE.</param>
         /// <param name="endTime">Timestamp in ms to get aggregate trades until INCLUSIVE.</param>
-        /// <param name="limit">Default 500; Max 500;</param>
+        /// <param name="limit">Limit of first request to site: Default 500; Max 500;</param>
         /// <returns>Interface with access to work with CandleSticks</returns>
         Task<ICandleSticks> GetCandleSticksAsync(string symbol, KlineInterval interval,
-            DateTimeOffset? startTime = null,
-            DateTimeOffset? endTime = null,
             int limit = 500);
 
         /// <summary>

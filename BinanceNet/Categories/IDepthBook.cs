@@ -16,6 +16,12 @@ namespace BinanceNet.Categories {
     /// Also you can subscribe to <see cref="OnDepthUpdate"/> to get orders change in real time.
     /// </summary>
     public interface IDepthBook {
+
+        /// <summary>
+        /// String contains name of trading pair e.g. BNBBTC
+        /// </summary>
+        string Symbol { get; }
+
         /// <summary>
         /// Id of last update
         /// </summary>
@@ -35,6 +41,14 @@ namespace BinanceNet.Categories {
         /// Stop Listen thread
         /// </summary>
         void StopListen();
+
+        /// <summary>
+        /// Clear and load new data from site.
+        /// Use it if you don't need update in realtime
+        /// but need newest data instead creating new book.
+        /// </summary>
+        /// <param name="limit">Default: 100 Max: 100</param>
+        void RefreshData(int limit = 100);
 
         /// <summary>
         /// Last Time when any event / data gotten from server
