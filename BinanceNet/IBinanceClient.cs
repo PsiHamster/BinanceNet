@@ -79,7 +79,8 @@ namespace BinanceNet {
         /// <param name="endTime">Timestamp in ms to get aggregate trades until INCLUSIVE.</param>
         /// <param name="limit">Default 500; Max 500;</param>
         /// <returns>Interface with access to trade history of choosen symbol</returns>
-        Task<ITradeHistory> GetTradeHistoryAsync(string symbol, long fromId,
+        Task<ITradeHistory> GetTradeHistoryAsync(string symbol,
+            long? fromId = null,
             DateTimeOffset? startTime = null,
             DateTimeOffset? endTime = null,
             int limit = 500);
