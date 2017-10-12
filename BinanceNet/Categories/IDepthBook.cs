@@ -16,7 +16,7 @@ namespace BinanceNet.Categories {
     /// Also you can subscribe to <see cref="OnDepthUpdate"/> to get orders change in real time.
     /// </summary>
     public interface IDepthBook {
-
+        
         /// <summary>
         /// String contains name of trading pair e.g. BNBBTC
         /// </summary>
@@ -48,7 +48,8 @@ namespace BinanceNet.Categories {
         /// but need newest data instead creating new book.
         /// </summary>
         /// <param name="limit">Default: 100 Max: 100</param>
-        void RefreshData(int limit = 100);
+        /// <returns><c>true</c> if success.</returns>
+        Task<bool> RefreshData(int limit = 100);
 
         /// <summary>
         /// Last Time when any event / data gotten from server
@@ -69,5 +70,10 @@ namespace BinanceNet.Categories {
         /// Occurs when an <see cref="DepthBookEventArgs"/> is received.
         /// </summary>
         event EventHandler<DepthBookEventArgs> OnDepthUpdate;
+
+        /// <summary>
+        /// Occurs whan error happens.
+        /// </summary>
+        event EventHandler<ReceiveErrorEventArgs> OnError;
     }
 }
