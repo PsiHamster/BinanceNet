@@ -71,7 +71,7 @@ namespace BinanceNet.Categories {
             DateTimeOffset? endTime = null, int limit = 500);
 
         /// <summary>
-        /// Get latest aggregated trade history
+        /// Get latest aggregated trade history. Always returns new Data.
         /// </summary>
         TradeHistoryData CurrentData { get; }
 

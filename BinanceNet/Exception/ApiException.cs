@@ -17,4 +17,11 @@ namespace BinanceNet.Exception {
             Msg = message;
         }
     }
+
+    /// <summary>
+    /// Throws when sended symbol is wrong 
+    /// </summary>
+    public class WrongSymbolException : ApiException {
+        public WrongSymbolException(int code, string message) : base(code, message) { }
+    }
 }

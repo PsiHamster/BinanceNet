@@ -11,7 +11,8 @@ using BinanceNet.Utils;
 namespace BinanceNet.Categories {
     /// <summary>
     /// Class implements connection to depth book and contains bids/asks data.
-    /// You need to use <see cref="StartListen"/> method to start listening all trades.
+    /// 
+    /// You need to use <see cref="StartListen"/> method to start update date in real time.
     /// If you don't need it use <see cref="StopListen"/> to stop listen.
     /// Also you can subscribe to <see cref="OnDepthUpdate"/> to get orders change in real time.
     /// </summary>

@@ -40,5 +40,9 @@ namespace BinanceNet.Model {
         /// Contains array of aggregated trades
         /// </summary>
         public AggregatedTrade[] Trades { get; }
+
+        public TradeHistoryData(AggregatedTrade[] data) {
+            Trades = data;
+        }
     }
 }
