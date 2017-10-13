@@ -3,8 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace BinanceNet.Model.EventArgs {
+    /// <summary>
+    /// Contains data that was getted from websocket 
+    /// </summary>
     [JsonObject (MemberSerialization.OptIn)]
     public class TradeUpdateArgs {
         /// <summary>
@@ -31,32 +35,56 @@ namespace BinanceNet.Model.EventArgs {
         [JsonProperty (PropertyName = "a")]
         public long UpdateId { get; set; }
 
-
+        /// <summary>
+        /// Price
+        /// </summary>
         [JsonProperty (PropertyName = "p")]
         public decimal Price { get; set; }
 
+        /// <summary>
+        /// Quantity that was traded
+        /// </summary>
         [JsonProperty (PropertyName = "q")]
         public decimal Quantity { get; set; }
 
+        /// <summary>
+        /// First breakdown trade id that aggregated here
+        /// </summary>
         [JsonProperty (PropertyName = "f")]
         public long FirstBreakDownTradeId { get; set; }
 
+        /// <summary>
+        /// Last breakdown trade id that aggregated here
+        /// </summary>
         [JsonProperty (PropertyName = "l")]
         public long LastBreakDownTradeId { get; set; }
 
-
+        /// <summary>
+        /// Timestamp
+        /// </summary>
         [JsonProperty (PropertyName = "T")]
-        public long TradeTime { get; set; }
+        public DateTimeOffset TradeTime { get; set; }
 
+        /// <summary>
+        /// If m = false, the trade was filled on a buy side order.
+        /// (Maker is buyer).
+        /// If m = true, the trade was filled on a sell side order.
+        /// (Maker is seller).
+        /// </summary>
         [JsonProperty (PropertyName = "m")]
         public bool IsBuyerMaker { get; set; }
 
+        /// <summary>
+        /// Can be ignore
+        /// </summary>
         [JsonProperty (PropertyName = "M")]
         public bool M { get; set; }
     }
 }
+
 /*
- * {
+* JSON Presentation of answer from site - 
+ {
 	"e": "aggTrade",		// event type
 	"E": 1499405254326,		// event time
 	"s": "ETHBTC",			// symbol

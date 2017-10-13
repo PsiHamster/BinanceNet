@@ -56,6 +56,7 @@ namespace BinanceNet.Categories {
         /// Get data from specified ID.
         /// </summary>
         /// <param name="fromId">ID to get aggregate trades from INCLUSIVE</param>
+        /// <param name="limit">Default 500; max 500</param>
         Task<TradeHistoryData> GetDataFromIdAsync(long fromId, int limit = 500);
 
         /// <summary>

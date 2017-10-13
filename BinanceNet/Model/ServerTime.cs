@@ -13,9 +13,9 @@ namespace BinanceNet.Model {
     public class ServerTime {
 
         /// <summary>
-        /// Current server time in UNIX millis
+        /// Current server time
         /// </summary>
         [JsonProperty(PropertyName= "serverTime")]
-        public static long CurrentServerTimeStamp { get; set; }
+        public static DateTimeOffset CurrentServerTimeStamp { get; set; }
     }
 }

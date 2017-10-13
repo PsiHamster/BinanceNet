@@ -72,7 +72,7 @@
     <Compile Include="Model\PricesList.cs" />
     <Compile Include="Model\ServerTime.cs" />
     <Compile Include="Model\Symbol24Stats.cs" />
-    <Compile Include="Model\Trade.cs" />
+    <Compile Include="Model\AggregatedTrade.cs" />
     <Compile Include="Model\TradeHistoryData.cs" />
     <Compile Include="Model\WebSocketEvent\AccountUpdateEvent.cs" />
     <Compile Include="Model\EventArgs\DepthBookEventArgs.cs" />
