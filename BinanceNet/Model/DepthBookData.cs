@@ -20,12 +20,12 @@ namespace BinanceNet.Model {
         /// <summary>
         /// All bids in depth book.
         /// </summary>
-        public OrderEntry[] Bids { get; private set; }
+        public DepthBookOrderEntry[] Bids { get; private set; }
 
         /// <summary>
         /// All asks in depth book.
         /// </summary>
-        public OrderEntry[] Asks { get; private set; }
+        public DepthBookOrderEntry[] Asks { get; private set; }
 
         /// <summary>
         /// SPECIAL FOR NEWTONSOFT.JSON
@@ -34,7 +34,7 @@ namespace BinanceNet.Model {
         [JsonProperty ("bids")]
         public decimal[][] DecimalBids {
             get { return Bids.Select(x => new[] {x.Price, x.Quantity}).ToArray(); }
-            set { Bids = value.Select(x => new OrderEntry(x)).ToArray(); }
+            set { Bids = value.Select(x => new DepthBookOrderEntry(x)).ToArray(); }
         }
         
         /// <summary>
@@ -44,7 +44,7 @@ namespace BinanceNet.Model {
         [JsonProperty ("asks")]
         public decimal[][] DecimalAsks {
             get { return Asks.Select (x => new[] { x.Price, x.Quantity }).ToArray (); }
-            set { Asks = value.Select (x => new OrderEntry (x)).ToArray (); }
+            set { Asks = value.Select (x => new DepthBookOrderEntry (x)).ToArray (); }
         }
     }
 }

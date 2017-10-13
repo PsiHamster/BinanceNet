@@ -50,7 +50,7 @@ namespace BinanceNet.Categories {
         /// </summary>
         /// <param name="limit">Default: 100 Max: 100</param>
         /// <returns><c>true</c> if success.</returns>
-        Task<bool> RefreshData(int limit = 100);
+        Task<bool> RefreshDataAsync(int limit = 100);
 
         /// <summary>
         /// Last Time when any event / data gotten from server
@@ -60,17 +60,17 @@ namespace BinanceNet.Categories {
         /// <summary>
         /// All bids in depth book.
         /// </summary>
-        OrderEntry[] Bids { get; }
+        DepthBookOrderEntry[] Bids { get; }
 
         /// <summary>
         /// All asks in depth book.
         /// </summary>
-        OrderEntry[] Asks { get; }
+        DepthBookOrderEntry[] Asks { get; }
 
         /// <summary>
         /// Occurs when an <see cref="DepthBookEventArgs"/> is received.
         /// </summary>
-        event EventHandler<DepthBookEventArgs> OnDepthUpdate;
+        event EventHandler<DepthBookEventArgs> OnUpdate;
 
         /// <summary>
         /// Occurs whan error happens.

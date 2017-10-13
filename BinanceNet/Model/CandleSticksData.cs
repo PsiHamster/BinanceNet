@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
-namespace BinanceNet.Model.EventArgs {
-    class TradeUpdateArgs {
+namespace BinanceNet.Model {
+
+    [JsonObject (MemberSerialization.OptIn)]
+    class CandleSticksData {
     }
 }

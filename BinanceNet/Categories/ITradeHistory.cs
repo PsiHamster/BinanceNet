@@ -45,7 +45,7 @@ namespace BinanceNet.Categories {
         /// </summary>
         /// <param name="limit">Default: 500 Max: 500</param>
         /// <returns><c>true</c> if success.</returns>
-        Task<bool> RefreshData(int limit = 500);
+        Task<bool> RefreshDataAsync(int limit = 500);
 
         /// <summary>
         /// Last Time when any event / data gotten from server
@@ -76,9 +76,9 @@ namespace BinanceNet.Categories {
         TradeHistoryData CurrentData { get; }
 
         /// <summary>
-        /// Occurs when an <see cref="TradeUpdateArgs"/> is received.
+        /// Occurs when an <see cref="TradeHistoryUpdateArgs"/> is received.
         /// </summary>
-        event EventHandler<TradeUpdateArgs> OnDepthUpdate;
+        event EventHandler<TradeHistoryUpdateArgs> OnUpdate;
 
         /// <summary>
         /// Occurs whan error happens.

@@ -33,6 +33,7 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -60,14 +61,17 @@
     <Compile Include="Model\AccountBalanceEntry.cs" />
     <Compile Include="Model\AccountInformation.cs" />
     <Compile Include="Model\AccountTradeEntry.cs" />
+    <Compile Include="Model\CandleSticksData.cs" />
     <Compile Include="Model\DepthBookData.cs" />
     <Compile Include="Model\EventArgs\AccountUpdateArgs.cs" />
+    <Compile Include="Model\EventArgs\CandleSticksUpdateArgs.cs" />
     <Compile Include="Model\EventArgs\OrderUpdateArgs.cs" />
     <Compile Include="Model\EventArgs\ReceiveErrorEventArgs.cs" />
-    <Compile Include="Model\EventArgs\TradeUpdateArgs.cs" />
+    <Compile Include="Model\EventArgs\TradeHistoryUpdateArgs.cs" />
     <Compile Include="Model\AllBookTickers.cs" />
+    <Compile Include="Model\EventArgs\TradeUpdateArgs.cs" />
     <Compile Include="Model\OrderQuery.cs" />
-    <Compile Include="Model\OrderEntry.cs" />
+    <Compile Include="Model\DepthBookOrderEntry.cs" />
     <Compile Include="Model\CandleStick.cs" />
     <Compile Include="Model\PricesList.cs" />
     <Compile Include="Model\ServerTime.cs" />
@@ -80,6 +84,8 @@
     <Compile Include="Model\WebSocketEvent\OrderUpdateEvent.cs" />
     <Compile Include="Model\WebSocketEvent\TradeEvent.cs" />
     <Compile Include="Model\WebSocketEvent\TradeUpdateEvent.cs" />
+    <Compile Include="Utils\ObjectToArrayConverter.cs" />
+    <Compile Include="Utils\TimeStamp.cs" />
     <Compile Include="Utils\WebProxy.cs" />
     <Compile Include="Utils\IWebRequester.cs" />
     <Compile Include="Utils\IWebSocketListener.cs" />
