@@ -61,6 +61,7 @@
     <Compile Include="Model\AccountBalanceEntry.cs" />
     <Compile Include="Model\AccountInformation.cs" />
     <Compile Include="Model\AccountTradeEntry.cs" />
+    <Compile Include="Model\BookTicker.cs" />
     <Compile Include="Model\CandleSticksData.cs" />
     <Compile Include="Model\DepthBookData.cs" />
     <Compile Include="Model\EventArgs\AccountUpdateArgs.cs" />
@@ -70,9 +71,12 @@
     <Compile Include="Model\EventArgs\TradeHistoryUpdateArgs.cs" />
     <Compile Include="Model\AllBookTickers.cs" />
     <Compile Include="Model\EventArgs\TradeUpdateArgs.cs" />
-    <Compile Include="Model\OrderQuery.cs" />
+    <Compile Include="Model\NewOrderRequest.cs" />
     <Compile Include="Model\DepthBookOrderEntry.cs" />
     <Compile Include="Model\CandleStick.cs" />
+    <Compile Include="Model\NewOrderResponse.cs" />
+    <Compile Include="Model\OrderQuery.cs" />
+    <Compile Include="Model\PriceEntry.cs" />
     <Compile Include="Model\PricesList.cs" />
     <Compile Include="Model\ServerTime.cs" />
     <Compile Include="Model\Symbol24Stats.cs" />

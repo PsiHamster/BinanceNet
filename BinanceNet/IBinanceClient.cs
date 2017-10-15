@@ -11,6 +11,8 @@ using BinanceNet.Model.EventArgs;
 using BinanceNet.Utils;
 
 namespace BinanceNet {
+    // TODO: recvWindow
+
     /// <summary>
     /// A client interface to use the Binance API
     /// </summary>
