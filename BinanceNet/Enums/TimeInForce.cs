@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 namespace BinanceNet.Enums {
     public enum TimeInForce {
         /// <summary>
-        /// Order will b
+        /// ImmediateOrCancel order will closed immediate if it can't then will be cancel.
         /// </summary>
-        ImmediateOrCancel,
+        IOC,
         /// <summary>
-        /// Order will continue to work within the system and in the marketplace until it executes or is canceled
+        /// GoodTilCanceled Order will continue to work within the system and in the marketplace until it executes or is canceled
         /// </summary>
-        GoodTilCanceled
+        GTC
     }
 }

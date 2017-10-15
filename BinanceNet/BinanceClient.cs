@@ -5,6 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace BinanceNet {
-    public class BinanceClient : IBinanceClient {
+    public class BinanceClient {
     }
 }

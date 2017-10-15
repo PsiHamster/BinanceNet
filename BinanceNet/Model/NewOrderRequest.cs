@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using BinanceNet.Enums;
+using Newtonsoft.Json.Converters;
 
 namespace BinanceNet.Model {
     // TODO: Documentation
@@ -16,10 +17,13 @@ namespace BinanceNet.Model {
         [JsonProperty ("symbol"), JsonRequired]
         public string Symbol { get; set; }
         [JsonProperty ("side"), JsonRequired]
-        public OrderSide Side { get; set; }
+        [JsonConverter(typeof(StringEnumConverter))]
+        public OrderSide OrderSide { get; set; }
         [JsonProperty ("type"), JsonRequired]
+        [JsonConverter(typeof(StringEnumConverter))]
         public OrderType Type { get; set; }
         [JsonProperty ("timeInForce"), JsonRequired]
+        [JsonConverter(typeof(StringEnumConverter))]
         public TimeInForce TimeInForce { get; set; }
         [JsonProperty ("quantity"), JsonRequired]
         public decimal Quantity { get; set; }

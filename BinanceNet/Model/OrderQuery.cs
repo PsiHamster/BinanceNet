@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json.Converters;
 
 namespace BinanceNet.Model {
     // TODO : Documentation
@@ -30,16 +31,20 @@ namespace BinanceNet.Model {
         public decimal ExecutedQuantity { get; set; }
 
         [JsonProperty ("status")]
-        public OrderStatus Status { get; set; }
+        [JsonConverter(typeof(StringEnumConverter))]
+        public OrderStatus OrderStatus { get; set; }
 
         [JsonProperty ("timeInForce")]
-        public TimeInForce timeInForce { get; set; }
+        [JsonConverter(typeof(StringEnumConverter))]
+        public TimeInForce TimeInForce { get; set; }
         
         [JsonProperty ("type")]
-        public OrderType Type { get; set; }
+        [JsonConverter(typeof(StringEnumConverter))]
+        public OrderType OrderType { get; set; }
 
         [JsonProperty ("side")]
-        public OrderSide Side { get; set; }
+        [JsonConverter(typeof(StringEnumConverter))]
+        public OrderSide OrderSide { get; set; }
 
         [JsonProperty ("stopPrice")]
         public decimal StopPrice { get; set; }

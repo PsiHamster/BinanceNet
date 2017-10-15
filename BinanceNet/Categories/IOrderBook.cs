@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace BinanceNet.Categories {
     public interface IOrderBook {
 
-        ITradeList GetAccoundTradeList { get; }
+        //ITradeList GetAccoundTradeList { get; }
 
     }
 }

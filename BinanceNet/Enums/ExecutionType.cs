@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BinanceNet.Enums {
-    public enum OrderStatus {
+namespace BinanceNet.Enums
+{
+    public enum ExecutionType {
         NEW,
-        PARTIALLY_FILLED,
-        FILLED,
         CANCELED,
-        PENDING_CANCEL,
+        REPLACED,
         REJECTED,
+        TRADE,
         EXPIRED
     }
 }

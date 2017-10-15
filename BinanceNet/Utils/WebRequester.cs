@@ -5,6 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace BinanceNet.Utils {
-    class WebRequester : IWebRequester {
+    class WebRequester {//: IWebRequester {
     }
 }

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using BinanceNet.Enums;
+using Newtonsoft.Json.Converters;
 
 namespace BinanceNet.Model {
     public class CandleSticksData {

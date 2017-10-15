@@ -1,6 +1,7 @@
 ﻿using System;
 using BinanceNet.Enums;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 
 namespace BinanceNet.Model.EventArgs
 {
@@ -29,6 +30,7 @@ namespace BinanceNet.Model.EventArgs
         /// Interval of sticks
         /// </summary>
         [JsonProperty("i")]
+        [JsonConverter(typeof(StringEnumConverter))]
         public KlineInterval Interval { get; set; }
 
         /// <summary>

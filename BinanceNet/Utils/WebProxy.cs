@@ -6,6 +6,6 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace BinanceNet.Utils {
-    class WebProxy : IWebProxy {
+    class WebProxy {//: IWebProxy {
     }
 }

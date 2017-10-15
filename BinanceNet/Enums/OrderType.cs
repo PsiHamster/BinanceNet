@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BinanceNet.Enums {
     public enum OrderType {
-        Limit,
-        Market
+        LIMIT,
+        MARKET
     }
 }
