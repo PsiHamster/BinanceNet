@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BinanceNet.Model;
+using BinanceNet.Model.EventArgs;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -77,6 +79,6 @@ namespace BinanceNet.Categories {
         /// <summary>
         /// Occurs whan error happens.
         /// </summary>
-        event EventHandler<CandleSticksEventArgs> OnError;
+        event EventHandler<CandleSticksUpdateArgs> OnError;
     }
 }

@@ -31,31 +31,13 @@ namespace BinanceNet.Model.EventArgs {
         /// <summary>
         /// All bids in depth book.
         /// </summary>
+        [JsonProperty (PropertyName = "b")]
         public DepthBookOrderEntry[] Bids { get; private set; }
 
         /// <summary>
         /// All asks in depth book.
         /// </summary>
-        public DepthBookOrderEntry[] Asks { get; private set; }
-
-        /// <summary>
-        /// SPECIAL FOR NEWTONSOFT.JSON
-        /// YOU NEED TO USE <see cref="Bids"/> for it
-        /// </summary>
-        [JsonProperty (PropertyName = "b")]
-        public decimal[][] DecimalBids {
-            get { return Bids.Select (x => new[] { x.Price, x.Quantity }).ToArray (); }
-            set { Bids = value.Select (x => new DepthBookOrderEntry (x)).ToArray (); }
-        }
-
-        /// <summary>
-        /// SPECIAL FOR NEWTONSOFT.JSON
-        /// YOU NEED TO USE <see cref="Asks"/> for it
-        /// </summary>
         [JsonProperty (PropertyName = "a")]
-        public decimal[][] DecimalAsks {
-            get { return Asks.Select (x => new[] { x.Price, x.Quantity }).ToArray (); }
-            set { Asks = value.Select (x => new DepthBookOrderEntry (x)).ToArray (); }
-        }
+        public DepthBookOrderEntry[] Asks { get; private set; }
     }
 }

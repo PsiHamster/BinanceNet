@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace BinanceNet.Utils {
+    // TODO: Replace all DateTimeOffset with this class
+    // TODO: Add long->TimeStamp
     public class TimeStamp {
         public DateTimeOffset Time { get; set; }
 

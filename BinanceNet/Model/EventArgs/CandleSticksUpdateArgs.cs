@@ -5,6 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace BinanceNet.Model.EventArgs {
-    class CandleSticksUpdateArgs {
+    public class CandleSticksUpdateArgs {
     }
 }
