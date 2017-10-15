@@ -58,13 +58,15 @@
     <Compile Include="Exception\ApiException.cs" />
     <Compile Include="Exception\UnauthorizedException.cs" />
     <Compile Include="IBinanceClient.cs" />
-    <Compile Include="Model\AccountBalanceEntry.cs" />
+    <Compile Include="Model\AccountAssetBalance.cs" />
     <Compile Include="Model\AccountInformation.cs" />
     <Compile Include="Model\AccountTradeEntry.cs" />
     <Compile Include="Model\BookTicker.cs" />
+    <Compile Include="Model\CancelOrderResponse.cs" />
     <Compile Include="Model\CandleSticksData.cs" />
     <Compile Include="Model\DepthBookData.cs" />
     <Compile Include="Model\EventArgs\AccountUpdateArgs.cs" />
+    <Compile Include="Model\EventArgs\BarUpdate.cs" />
     <Compile Include="Model\EventArgs\CandleSticksUpdateArgs.cs" />
     <Compile Include="Model\EventArgs\OrderUpdateArgs.cs" />
     <Compile Include="Model\EventArgs\ReceiveErrorEventArgs.cs" />
@@ -75,6 +77,7 @@
     <Compile Include="Model\DepthBookOrderEntry.cs" />
     <Compile Include="Model\CandleStick.cs" />
     <Compile Include="Model\NewOrderResponse.cs" />
+    <Compile Include="Model\OrdersQueryList.cs" />
     <Compile Include="Model\OrderQuery.cs" />
     <Compile Include="Model\PriceEntry.cs" />
     <Compile Include="Model\PricesList.cs" />
@@ -83,7 +86,7 @@
     <Compile Include="Model\AggregatedTrade.cs" />
     <Compile Include="Model\TradeHistoryData.cs" />
     <Compile Include="Model\WebSocketEvent\AccountUpdateEvent.cs" />
-    <Compile Include="Model\EventArgs\DepthBookEventArgs.cs" />
+    <Compile Include="Model\EventArgs\DepthBookUpdateArgs.cs" />
     <Compile Include="Model\WebSocketEvent\KlineEvent.cs" />
     <Compile Include="Model\WebSocketEvent\OrderUpdateEvent.cs" />
     <Compile Include="Model\WebSocketEvent\TradeEvent.cs" />

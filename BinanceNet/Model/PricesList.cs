@@ -9,7 +9,7 @@ namespace BinanceNet.Model {
     /// List of prices.
     /// </summary>
     public class PricesList {
-        PriceEntry[] Prices { get; }
+        public PriceEntry[] Prices { get; }
 
         // TODO: Implement methods
 

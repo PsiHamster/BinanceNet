@@ -68,9 +68,9 @@ namespace BinanceNet.Categories {
         DepthBookOrderEntry[] Asks { get; }
 
         /// <summary>
-        /// Occurs when an <see cref="DepthBookEventArgs"/> is received.
+        /// Occurs when an <see cref="DepthBookUpdateArgs"/> is received.
         /// </summary>
-        event EventHandler<DepthBookEventArgs> OnUpdate;
+        event EventHandler<DepthBookUpdateArgs> OnUpdate;
 
         /// <summary>
         /// Occurs whan error happens.

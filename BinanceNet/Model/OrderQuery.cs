@@ -67,3 +67,4 @@ namespace BinanceNet.Model {
 		  "icebergQty": "0.0",
 		  "time": 1499827319559
 		}*/
+        

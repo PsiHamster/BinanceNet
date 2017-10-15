@@ -9,13 +9,11 @@ using Newtonsoft.Json.Serialization;
 
 namespace BinanceNet.Utils {
     public class ObjectToArrayConverter<T> : JsonConverter {
-        public override bool CanConvert(Type objectType) {
-            return typeof (T) == objectType;
-        }
+        public override bool CanConvert(Type objectType)
+            => typeof(T) == objectType;
 
-        static bool ShouldSkip(JsonProperty property) {
-            return property.Ignored || !property.Readable || !property.Writable;
-        }
+        static bool ShouldSkip(JsonProperty property)
+            => property.Ignored || !property.Readable || !property.Writable;
 
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer) {
             var type = value.GetType ();

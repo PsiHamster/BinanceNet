@@ -1,43 +1,44 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using Newtonsoft.Json;
 
 namespace BinanceNet.Model.EventArgs {
     [JsonObject (MemberSerialization.OptIn)]
-    public class DepthBookEventArgs {
+    public class DepthBookUpdateArgs {
         /// <summary>
         /// Event type (Normally need to be equal "depthUpdate")
         /// </summary>
-        [JsonProperty (PropertyName = "e")]
+        [JsonProperty ("e")]
         public string EventType { get; set; }
 
         /// <summary>
-        /// Time of event in Unix millis timestamp
+        /// Time of event
         /// </summary>
-        [JsonProperty (PropertyName = "E")]
-        public long EventTime { get; set; }
+        [JsonProperty ("E")]
+        public DateTimeOffset EventTime { get; set; }
 
         /// <summary>
         /// String contains name of trading pair e.g. BNBBTC
         /// </summary>
-        [JsonProperty (PropertyName = "s")]
+        [JsonProperty ("s")]
         public string Symbol { get; set; }
 
         /// <summary>
         /// Update ID to sync up Depth Book
         /// </summary>
-        [JsonProperty (PropertyName = "u")]
+        [JsonProperty ("u")]
         public long UpdateId { get; set; }
 
         /// <summary>
         /// All bids in depth book.
         /// </summary>
-        [JsonProperty (PropertyName = "b")]
+        [JsonProperty ("b")]
         public DepthBookOrderEntry[] Bids { get; private set; }
 
         /// <summary>
         /// All asks in depth book.
         /// </summary>
-        [JsonProperty (PropertyName = "a")]
+        [JsonProperty ("a")]
         public DepthBookOrderEntry[] Asks { get; private set; }
     }
 }
