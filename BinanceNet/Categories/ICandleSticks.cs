@@ -1,10 +1,11 @@
 ﻿using BinanceNet.Model;
-using BinanceNet.Model.EventArgs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BinanceNet.Model.CandleSticks;
+using BinanceNet.Model.TradeHistory;
 
 namespace BinanceNet.Categories {
     public interface ICandleSticks {

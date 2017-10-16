@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BinanceNet.Model;
-using BinanceNet.Model.EventArgs;
+using BinanceNet.Model.Account;
 
 namespace BinanceNet.Categories {
     public interface IAccount : IDisposable {
@@ -40,6 +40,6 @@ namespace BinanceNet.Categories {
         /// <summary>
         /// Occurs when a trade update is received.
         /// </summary>
-        event EventHandler<TradeUpdateArgs> OnTradeUpdate;
+        event EventHandler<ExecutionReportUpdateArgs> OnTradeUpdate;
     }
 }

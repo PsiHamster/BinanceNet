@@ -36,7 +36,6 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -51,7 +50,9 @@
     <Compile Include="Categories\ITradeHistory.cs" />
     <Compile Include="Categories\OrderBook.cs" />
     <Compile Include="Categories\TradeHistory.cs" />
+    <Compile Include="Enums\ExecutionType.cs" />
     <Compile Include="Enums\KlineInterval.cs" />
+    <Compile Include="Enums\OrderRejectReason.cs" />
     <Compile Include="Enums\OrderSide.cs" />
     <Compile Include="Enums\OrderStatus.cs" />
     <Compile Include="Enums\OrderType.cs" />
@@ -61,39 +62,34 @@
     <Compile Include="Exception\ApiException.cs" />
     <Compile Include="Exception\UnauthorizedException.cs" />
     <Compile Include="IBinanceClient.cs" />
-    <Compile Include="Model\AccountAssetBalance.cs" />
-    <Compile Include="Model\AccountInformation.cs" />
-    <Compile Include="Model\AccountTradeEntry.cs" />
-    <Compile Include="Model\BookTicker.cs" />
-    <Compile Include="Model\CancelOrderResponse.cs" />
-    <Compile Include="Model\CandleSticksData.cs" />
-    <Compile Include="Model\DepthBookData.cs" />
-    <Compile Include="Model\EventArgs\AccountUpdateArgs.cs" />
-    <Compile Include="Model\EventArgs\BarUpdate.cs" />
-    <Compile Include="Model\EventArgs\CandleSticksUpdateArgs.cs" />
-    <Compile Include="Model\EventArgs\OrderUpdateArgs.cs" />
-    <Compile Include="Model\EventArgs\ReceiveErrorEventArgs.cs" />
-    <Compile Include="Model\EventArgs\TradeHistoryUpdateArgs.cs" />
-    <Compile Include="Model\AllBookTickers.cs" />
-    <Compile Include="Model\EventArgs\TradeUpdateArgs.cs" />
-    <Compile Include="Model\NewOrderRequest.cs" />
-    <Compile Include="Model\DepthBookOrderEntry.cs" />
-    <Compile Include="Model\CandleStick.cs" />
-    <Compile Include="Model\NewOrderResponse.cs" />
-    <Compile Include="Model\OrdersQueryList.cs" />
-    <Compile Include="Model\OrderQuery.cs" />
-    <Compile Include="Model\PriceEntry.cs" />
-    <Compile Include="Model\PricesList.cs" />
-    <Compile Include="Model\ServerTime.cs" />
-    <Compile Include="Model\Symbol24Stats.cs" />
-    <Compile Include="Model\AggregatedTrade.cs" />
-    <Compile Include="Model\TradeHistoryData.cs" />
-    <Compile Include="Model\WebSocketEvent\AccountUpdateEvent.cs" />
-    <Compile Include="Model\EventArgs\DepthBookUpdateArgs.cs" />
-    <Compile Include="Model\WebSocketEvent\KlineEvent.cs" />
-    <Compile Include="Model\WebSocketEvent\OrderUpdateEvent.cs" />
-    <Compile Include="Model\WebSocketEvent\TradeEvent.cs" />
-    <Compile Include="Model\WebSocketEvent\TradeUpdateEvent.cs" />
+    <Compile Include="Model\Account\AccountAssetBalance.cs" />
+    <Compile Include="Model\Account\AccountAssetBalanceUpdated.cs" />
+    <Compile Include="Model\Account\AccountInformation.cs" />
+    <Compile Include="Model\Account\AccountTradeEntry.cs" />
+    <Compile Include="Model\General\BookTicker.cs" />
+    <Compile Include="Model\Account\CancelOrderResponse.cs" />
+    <Compile Include="Model\CandleSticks\CandleSticksData.cs" />
+    <Compile Include="Model\DepthBook\DepthBookData.cs" />
+    <Compile Include="Model\Account\AccountUpdateArgs.cs" />
+    <Compile Include="Model\CandleSticks\CandleStickUpdate.cs" />
+    <Compile Include="Model\CandleSticks\CandleSticksUpdateArgs.cs" />
+    <Compile Include="Model\ReceiveErrorEventArgs.cs" />
+    <Compile Include="Model\TradeHistory\TradeHistoryUpdateArgs.cs" />
+    <Compile Include="Model\General\AllBookTickers.cs" />
+    <Compile Include="Model\Account\ExecutionReportUpdateArgs.cs" />
+    <Compile Include="Model\Account\NewOrderRequest.cs" />
+    <Compile Include="Model\DepthBook\DepthBookOrderEntry.cs" />
+    <Compile Include="Model\CandleSticks\CandleStick.cs" />
+    <Compile Include="Model\Account\NewOrderResponse.cs" />
+    <Compile Include="Model\Account\OrdersQueryList.cs" />
+    <Compile Include="Model\Account\OrderQuery.cs" />
+    <Compile Include="Model\General\PriceEntry.cs" />
+    <Compile Include="Model\General\PricesList.cs" />
+    <Compile Include="Model\General\ServerTime.cs" />
+    <Compile Include="Model\General\Symbol24Stats.cs" />
+    <Compile Include="Model\TradeHistory\AggregatedTrade.cs" />
+    <Compile Include="Model\TradeHistory\TradeHistoryData.cs" />
+    <Compile Include="Model\DepthBook\DepthBookUpdateArgs.cs" />
     <Compile Include="Utils\ObjectToArrayConverter.cs" />
     <Compile Include="Utils\TimeStamp.cs" />
     <Compile Include="Utils\WebProxy.cs" />
@@ -108,5 +104,6 @@
     </Reference>
     <Reference Include="System" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

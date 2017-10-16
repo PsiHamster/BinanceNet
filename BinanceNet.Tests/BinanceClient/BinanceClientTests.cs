@@ -1,6 +1,7 @@
 ﻿using BinanceNet.Categories;
 using BinanceNet.Enums;
 using BinanceNet.Model;
+using BinanceNet.Model.General;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace BinanceNet.Tests.BinanceClient {
