@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using BinanceNet.Model;
 using BinanceNet.Model.DepthBook;
-using BinanceNet.Model.WebSocketEvent;
 using BinanceNet.Utils;
 
 namespace BinanceNet.Categories {
