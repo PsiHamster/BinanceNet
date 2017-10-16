@@ -8,7 +8,17 @@ using BinanceNet.Model.CandleSticks;
 using BinanceNet.Model.TradeHistory;
 using BinanceNet.Utils;
 
-namespace BinanceNet.Categories {
+namespace BinanceNet.Categories
+{
+    /// <summary>
+    /// Class implements connection to CandleSticks.
+    /// To get data call <see cref="GetLatestDataAsync"/>
+    /// 
+    /// If you want connect to wesocket:
+    /// You need to use <see cref="StartListen"/> method to start update date in real time.
+    /// If you don't need it use <see cref="StopListen"/> to stop listen.
+    /// Subscribe on <see cref="OnUpdate"/> to get updates in real time
+    /// </summary>
     public interface ICandleSticks {
 
         /// <summary>
@@ -19,12 +29,9 @@ namespace BinanceNet.Categories {
         #region DataGetters
 
         /// <summary>
-        /// Clear and load new data from site.
-        /// Use it if you don't need update in realtime
-        /// but need newest data instead creating new book.
+        /// Get latest data from site async.
         /// </summary>
         /// <param name="limit">Default: 500 Max: 500</param>
-        /// <returns><c>true</c> if success.</returns>
         Task<CandleSticksData> GetLatestDataAsync(int limit = 500);
 
         /// <summary>
@@ -75,20 +82,20 @@ namespace BinanceNet.Categories {
         void StopListen();
         
         /// <summary>
-        /// Get latest aggregated trade history. Always returns new Data.
+        /// Get latest copy of data that updates in real time.
+        /// Will be null if <c>StartListen</c> not called.
         /// </summary>
         CandleSticksData CurrentData { get; }
 
         #endregion
-
-
+        
         /// <summary>
         /// Occurs when an <see cref="TradeHistoryUpdateArgs"/> is received.
         /// </summary>
         event EventHandler<CandleSticksUpdateArgs> OnUpdate;
 
         /// <summary>
-        /// Occurs whan error happens.
+        /// Occurs when error happens.
         /// </summary>
         event EventHandler<CandleSticksUpdateArgs> OnError;
     }

@@ -7,10 +7,16 @@ using System.Threading.Tasks;
 using BinanceNet.Model.TradeHistory;
 using BinanceNet.Utils;
 
-namespace BinanceNet.Categories {
+namespace BinanceNet.Categories
+{
     /// <summary>
-    /// Class implements connection to trade history and contains compressed, aggregate trades.
-    /// Trades that fill at the time, from the same order, with the same price will have the quantity aggregated.
+    /// Class implements connection to aggregated trades history.
+    /// To get data call <see cref="GetLatestDataAsync"/>
+    /// 
+    /// If you want connect to wesocket:
+    /// You need to use <see cref="StartListen"/> method to start update date in real time.
+    /// If you don't need it use <see cref="StopListen"/> to stop listen.
+    /// Subscribe on <see cref="OnUpdate"/> to get updates in real time
     /// </summary>
     public interface ITradeHistory {
 
@@ -19,39 +25,13 @@ namespace BinanceNet.Categories {
         /// </summary>
         string Symbol { get; }
 
-        /// <summary>
-        /// Id of last update
-        /// </summary>
-        long LastUpdateId { get; }
+        #region DataGetters
 
         /// <summary>
-        /// Is new trades listening
-        /// </summary>
-        bool IsListening { get; }
-
-        /// <summary>
-        /// Start Listen thread
-        /// </summary>
-        void StartListen();
-
-        /// <summary>
-        /// Stop Listen thread
-        /// </summary>
-        void StopListen();
-
-        /// <summary>
-        /// Clear and load new data from site.
-        /// Use it if you don't need update in realtime
-        /// but need newest data instead creating new book.
+        /// Get latest trade history from site
         /// </summary>
         /// <param name="limit">Default: 500 Max: 500</param>
-        /// <returns><c>true</c> if success.</returns>
-        Task<bool> RefreshDataAsync(int limit = 500);
-
-        /// <summary>
-        /// Last Time when any event / data gotten from server
-        /// </summary>
-        TimeStamp LastUpdateTime { get; }
+        Task<TradeHistoryData> GetLatestDataAsync(int limit = 500);
 
         /// <summary>
         /// Get data from specified ID.
@@ -71,10 +51,42 @@ namespace BinanceNet.Categories {
         Task<TradeHistoryData> GetDataInTimePeriodAsync(TimeStamp startTime = null,
             TimeStamp endTime = null, int limit = 500);
 
+        #endregion
+
+        #region WebSocket
+
         /// <summary>
-        /// Get latest aggregated trade history. Always returns new Data.
+        /// Is new trades listening
+        /// </summary>
+        bool IsListening { get; }
+
+        /// <summary>
+        /// Id of last update
+        /// </summary>
+        long LastUpdateId { get; }
+
+        /// <summary>
+        /// Last Time when any event / data gotten from server
+        /// </summary>
+        TimeStamp LastUpdateTime { get; }
+        
+        /// <summary>
+        /// Start Listen thread
+        /// </summary>
+        void StartListen();
+
+        /// <summary>
+        /// Stop Listen thread
+        /// </summary>
+        void StopListen();
+
+        /// <summary>
+        /// Get latest copy of data that updates in real time.
+        /// Will be null if <c>StartListen</c> not called.
         /// </summary>
         TradeHistoryData CurrentData { get; }
+        
+        #endregion
 
         /// <summary>
         /// Occurs when an <see cref="TradeHistoryUpdateArgs"/> is received.

@@ -10,21 +10,27 @@ using BinanceNet.Utils;
 namespace BinanceNet.Categories {
     public interface IAccount {
         /// <summary>
-        /// Try to authorize application with token.
-        /// </summary>
-        /// <param name="token">Token that you need get on binance</param>
-        /// <returns><c>true</c> if success</returns>
-        Task<bool> AuthorizeAsync(string token);
-
-        /// <summary>
         /// Is account authorized
         /// </summary>
         bool IsAuthorized { get; }
+        
+        /// <summary>
+        /// Get latest account information from site.
+        /// </summary>
+        /// <returns>Account information</returns>
+        Task<AccountInformation> GetAccountInformationAsync();
+        
+        Task<>
 
         /// <summary>
         /// Is account updates listening
         /// </summary>
         bool IsListening { get; }
+
+        /// <summary>
+        /// Last Time when any event / data gotten from server
+        /// </summary>
+        TimeStamp LastUpdateTime { get; }
 
         /// <summary>
         /// Start Listen thread
@@ -37,26 +43,9 @@ namespace BinanceNet.Categories {
         void StopListen();
 
         /// <summary>
-        /// Last Time when any event / data gotten from server
-        /// </summary>
-        TimeStamp LastUpdateTime { get; }
-
-        /// <summary>
         /// Contains latest information about account
         /// </summary>
         AccountInformation AccountData { get; }
-
-        /// <summary>
-        /// Get current account information
-        /// </summary>
-        /// <returns>Account information</returns>
-        Task<bool> UpdateAccountInformationAsync();
-
-        /// <summary>
-        /// Get OrderBook to check and perform actions with your orders.
-        /// </summary>
-        /// <returns>Order book with methods to place/delete/get orders</returns>
-        IOrderBook OrderBook { get; }
 
         /// <summary>
         /// Occurs whan a account update is received.
