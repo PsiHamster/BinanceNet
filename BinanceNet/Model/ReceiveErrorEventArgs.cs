@@ -3,10 +3,22 @@
         /// <summary>
         /// Gets the API request exception
         /// </summary>
-        public System.Exception Exception { get; private set; }
+        public System.Exception Exception { get; }
 
-        internal ReceiveErrorEventArgs(System.Exception exception) {
+        /// <summary>
+        /// Contains request params in object.
+        /// </summary>
+        public object RequestParams { get; }
+
+        /// <summary>
+        /// Params in json.
+        /// </summary>
+        public string RequestJsonParams { get; }
+
+        internal ReceiveErrorEventArgs(System.Exception exception, object requestParams = null, string requestJsonParams = null) {
             Exception = exception;
+            RequestParams = requestParams;
+            RequestJsonParams = requestJsonParams;
         }
 
         /// <summary>

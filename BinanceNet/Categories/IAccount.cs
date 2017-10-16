@@ -7,7 +7,7 @@ using BinanceNet.Model;
 using BinanceNet.Model.Account;
 
 namespace BinanceNet.Categories {
-    public interface IAccount : IDisposable {
+    public interface IAccount {
         /// <summary>
         /// Try to authorize application with token.
         /// </summary>
@@ -16,10 +16,40 @@ namespace BinanceNet.Categories {
         Task<bool> AuthorizeAsync(string token);
 
         /// <summary>
+        /// Is account authorized
+        /// </summary>
+        bool IsAuthorized { get; }
+
+        /// <summary>
+        /// Is account updates listening
+        /// </summary>
+        bool IsListening { get; }
+
+        /// <summary>
+        /// Start Listen thread
+        /// </summary>
+        void StartListen();
+
+        /// <summary>
+        /// Stop Listen thread
+        /// </summary>
+        void StopListen();
+
+        /// <summary>
+        /// Last Time when any event / data gotten from server
+        /// </summary>
+        DateTimeOffset LastUpdateTime { get; }
+
+        /// <summary>
+        /// Contains latest information about account
+        /// </summary>
+        AccountInformation AccountData { get; }
+
+        /// <summary>
         /// Get current account information
         /// </summary>
         /// <returns>Account information</returns>
-        Task<AccountInformation> GetAccountInformationAsync();
+        Task<bool> UpdateAccountInformationAsync();
 
         /// <summary>
         /// Get OrderBook to check and perform actions with your orders.
@@ -35,7 +65,7 @@ namespace BinanceNet.Categories {
         /// <summary>
         /// Occurs whan an order update is received.
         /// </summary>
-        event EventHandler<OrderUpdateArgs> OnOrderUpdate;
+        event EventHandler<ExecutionReportUpdateArgs> OnOrderUpdate;
 
         /// <summary>
         /// Occurs when a trade update is received.
