@@ -1,4 +1,5 @@
 ﻿using System;
+using BinanceNet.Utils;
 using Newtonsoft.Json;
 
 namespace BinanceNet.Model.Account
@@ -16,7 +17,7 @@ namespace BinanceNet.Model.Account
         /// Time of event
         /// </summary>
         [JsonProperty("E")]
-        public DateTimeOffset EventTime { get; set; }
+        public TimeStamp EventTime { get; set; }
 
         [JsonProperty("m")]
         public long MakerCommission { get; set; }

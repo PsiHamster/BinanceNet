@@ -1,4 +1,5 @@
 ﻿using System;
+using BinanceNet.Utils;
 using Newtonsoft.Json;
 
 namespace BinanceNet.Model.Account {
@@ -16,6 +17,6 @@ namespace BinanceNet.Model.Account {
         [JsonProperty ("clientOrderId")]
         public string ClientOrderId { get; set; }
         [JsonProperty ("transactTime")]
-        public DateTimeOffset TransactTime { get; set; }
+        public TimeStamp TransactTime { get; set; }
     }
 }

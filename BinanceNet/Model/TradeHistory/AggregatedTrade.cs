@@ -1,4 +1,5 @@
 ﻿using System;
+using BinanceNet.Utils;
 using Newtonsoft.Json;
 
 namespace BinanceNet.Model.TradeHistory {
@@ -36,7 +37,7 @@ namespace BinanceNet.Model.TradeHistory {
         /// Timestamp
         /// </summary>
         [JsonProperty ("T")]
-        public DateTimeOffset TimeStamp { get; set; }
+        public TimeStamp TimeStamp { get; set; }
 
         /// <summary>
         /// If m = false, the trade was filled on a buy side order.

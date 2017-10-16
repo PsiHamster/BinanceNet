@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BinanceNet.Model.TradeHistory;
+using BinanceNet.Utils;
 
 namespace BinanceNet.Categories {
     /// <summary>
@@ -50,7 +51,7 @@ namespace BinanceNet.Categories {
         /// <summary>
         /// Last Time when any event / data gotten from server
         /// </summary>
-        DateTimeOffset LastUpdateTime { get; }
+        TimeStamp LastUpdateTime { get; }
 
         /// <summary>
         /// Get data from specified ID.
@@ -67,8 +68,8 @@ namespace BinanceNet.Categories {
         /// <param name="startTime">Timestamp in ms to get aggregate trades from INCLUSIVE.</param>
         /// <param name="endTime">Timestamp in ms to get aggregate trades until INCLUSIVE.</param>
         /// <param name="limit">Default 500; max 500</param>
-        Task<TradeHistoryData> GetDataInTimePeriodAsync(DateTimeOffset? startTime = null,
-            DateTimeOffset? endTime = null, int limit = 500);
+        Task<TradeHistoryData> GetDataInTimePeriodAsync(TimeStamp startTime = null,
+            TimeStamp endTime = null, int limit = 500);
 
         /// <summary>
         /// Get latest aggregated trade history. Always returns new Data.

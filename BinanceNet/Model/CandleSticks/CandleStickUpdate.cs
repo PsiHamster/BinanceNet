@@ -1,5 +1,6 @@
 ﻿using System;
 using BinanceNet.Enums;
+using BinanceNet.Utils;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
@@ -12,13 +13,13 @@ namespace BinanceNet.Model.CandleSticks
         /// Timestamp
         /// </summary>
         [JsonProperty("t")]
-        public DateTimeOffset OpenTime { get; set; }
+        public TimeStamp OpenTime { get; set; }
 
         /// <summary>
         /// When stick is close
         /// </summary>
         [JsonProperty("T")]
-        public DateTimeOffset CloseTime { get; set; }
+        public TimeStamp CloseTime { get; set; }
 
         /// <summary>
         /// Symbol

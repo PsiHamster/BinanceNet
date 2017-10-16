@@ -1,4 +1,5 @@
 ﻿using System;
+using BinanceNet.Utils;
 using Newtonsoft.Json;
 
 namespace BinanceNet.Model.Account
@@ -21,7 +22,7 @@ namespace BinanceNet.Model.Account
         public string CommissionAsset { get; set; }
 
         [JsonProperty("time")]
-        public DateTimeOffset Time { get; set; }
+        public TimeStamp Time { get; set; }
         
         [JsonProperty("isBuyer")]
         public bool IsBuyer { get; set; }

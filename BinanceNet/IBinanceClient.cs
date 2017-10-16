@@ -63,23 +63,18 @@ namespace BinanceNet {
         #region SymbolCommands
 
         /// <summary>
-        /// Get order book for choosed symbol.
+        /// Get class provides order book for choosed symbol.
         /// </summary>
         /// <param name="symbol">String contains name of trading pair e.g. BNBBTC </param>
-        /// <param name="limit">Default 100; Max 100;</param>
         /// <returns> Interface with access to current orders and possibility to update it. </returns>
-        Task<IDepthBook> GetDepthBookAsync(string symbol, int limit = 100);
+        IDepthBook GetDepthBook(string symbol);
 
         /// <summary>
-        /// Get compressed, aggregate trades for a symbol.
-        /// Trades that fill at the time, from the same order,
-        /// with the same price will have the quantity aggregated.
+        /// Get class provides trade history book for choosed symbol.
         /// </summary>
         /// <param name="symbol">String contains name of trading pair e.g. BNBBTC </param>
-        /// <param name="limit">Limit of first request to site: default 500; Max 500;</param>
-        /// <returns>Interface with access to trade history of choosen symbol</returns>
-        Task<ITradeHistory> GetTradeHistoryAsync(string symbol,
-            int limit = 500);
+        /// <returns>Interface with access to trade history of choosen symbol and possibility to update it. </returns>
+        ITradeHistory GetTradeHistory(string symbol);
 
         /// <summary>
         /// Get kline/candlestick bars for a symbol.
@@ -87,12 +82,8 @@ namespace BinanceNet {
         /// </summary>
         /// <param name="symbol">String contains name of trading pair e.g. BNBBTC </param>
         /// <param name="interval">Choose type of <see cref="KlineInterval"/> that you need</param>
-        /// <param name="startTime">Timestamp in ms to get aggregate trades from INCLUSIVE.</param>
-        /// <param name="endTime">Timestamp in ms to get aggregate trades until INCLUSIVE.</param>
-        /// <param name="limit">Limit of first request to site: Default 500; Max 500;</param>
         /// <returns>Interface with access to work with CandleSticks</returns>
-        Task<ICandleSticks> GetCandleSticksAsync(string symbol, KlineInterval interval,
-            int limit = 500);
+        ICandleSticks GetCandleSticks(string symbol, KlineInterval interval);
 
         /// <summary>
         /// Get 24 hour price change statistics for choosen symbol
@@ -110,6 +101,5 @@ namespace BinanceNet {
         /// <param name="token">API-KEY that you can get on https://www.binance.com/userCenter/createApi.html page</param>
         /// <returns></returns>
         Task<IAccount> GetAccountAsync(string token);
-        
     }
 }

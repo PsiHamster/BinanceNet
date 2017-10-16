@@ -54,7 +54,7 @@ namespace BinanceNet.Categories {
         /// <summary>
         /// Last Time when any event / data gotten from server
         /// </summary>
-        DateTimeOffset LastUpdateTime { get; }
+        TimeStamp LastUpdateTime { get; }
 
         /// <summary>
         /// All bids in depth book.

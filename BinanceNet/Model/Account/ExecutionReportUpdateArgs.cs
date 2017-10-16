@@ -1,5 +1,6 @@
 ﻿using System;
 using BinanceNet.Enums;
+using BinanceNet.Utils;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
@@ -17,7 +18,7 @@ namespace BinanceNet.Model.Account
         /// Time of event
         /// </summary>
         [JsonProperty("E")]
-        public DateTimeOffset EventTime { get; set; }
+        public TimeStamp EventTime { get; set; }
         /// <summary>
         /// String contains name of trading pair e.g. BNBBTC
         /// </summary>
@@ -85,7 +86,7 @@ namespace BinanceNet.Model.Account
         [JsonProperty("N")]
         public string ComissionAsset { get; set; }
         [JsonProperty("T")]
-        public DateTimeOffset TradeTime { get; set; }
+        public TimeStamp TradeTime { get; set; }
         [JsonProperty("t")]
         public long TradeId { get; set; }
         [JsonProperty("I")]

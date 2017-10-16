@@ -12,7 +12,7 @@ namespace BinanceNet.Model.CandleSticks {
         /// Timestamp
         /// </summary>
         [JsonProperty (Order = 1)]
-        public DateTimeOffset OpenTime { get; set; }
+        public TimeStamp OpenTime { get; set; }
 
         /// <summary>
         /// When stick is open
@@ -48,7 +48,7 @@ namespace BinanceNet.Model.CandleSticks {
         /// When stick is close
         /// </summary>
         [JsonProperty (Order = 7)]
-        public DateTimeOffset CloseTime { get; set; }
+        public TimeStamp CloseTime { get; set; }
 
         [JsonProperty (Order = 8)]
         public decimal QuoteAssetVolume { get; set; }

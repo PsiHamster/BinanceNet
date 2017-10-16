@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using BinanceNet.Utils;
 
 namespace BinanceNet.Model.TradeHistory {
     /// <summary>
@@ -27,11 +28,11 @@ namespace BinanceNet.Model.TradeHistory {
         /// <summary>
         /// Min timestamp of aggregate trade contains here
         /// </summary>
-        public DateTimeOffset StartTime => Trades.Min(x => x.TimeStamp);
+        public TimeStamp StartTime => Trades.Min(x => x.TimeStamp);
         /// <summary>
         /// Max timestamp of aggregate trade contains here
         /// </summary>
-        public DateTimeOffset EndTime => Trades.Max(x => x.TimeStamp);
+        public TimeStamp EndTime => Trades.Max(x => x.TimeStamp);
 
         /// <summary>
         /// Contains array of aggregated trades

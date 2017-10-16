@@ -1,4 +1,5 @@
 ﻿using System;
+using BinanceNet.Utils;
 using Newtonsoft.Json;
 
 namespace BinanceNet.Model.DepthBook {
@@ -14,7 +15,7 @@ namespace BinanceNet.Model.DepthBook {
         /// Time of event
         /// </summary>
         [JsonProperty ("E")]
-        public DateTimeOffset EventTime { get; set; }
+        public TimeStamp EventTime { get; set; }
 
         /// <summary>
         /// String contains name of trading pair e.g. BNBBTC

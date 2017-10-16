@@ -1,4 +1,5 @@
 ﻿using System;
+using BinanceNet.Utils;
 using Newtonsoft.Json;
 
 namespace BinanceNet.Model.General {
@@ -12,6 +13,6 @@ namespace BinanceNet.Model.General {
         /// Current server time
         /// </summary>
         [JsonProperty(PropertyName= "serverTime")]
-        public static DateTimeOffset CurrentServerTimeStamp { get; set; }
+        public static TimeStamp CurrentServerTimeStamp { get; set; }
     }
 }

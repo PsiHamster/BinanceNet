@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using BinanceNet.Model;
 using BinanceNet.Model.Account;
+using BinanceNet.Utils;
 
 namespace BinanceNet.Categories {
     public interface IAccount {
@@ -38,7 +39,7 @@ namespace BinanceNet.Categories {
         /// <summary>
         /// Last Time when any event / data gotten from server
         /// </summary>
-        DateTimeOffset LastUpdateTime { get; }
+        TimeStamp LastUpdateTime { get; }
 
         /// <summary>
         /// Contains latest information about account

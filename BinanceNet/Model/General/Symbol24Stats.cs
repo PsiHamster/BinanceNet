@@ -1,4 +1,5 @@
 ﻿using System;
+using BinanceNet.Utils;
 using Newtonsoft.Json;
 
 namespace BinanceNet.Model.General {
@@ -51,10 +52,10 @@ namespace BinanceNet.Model.General {
         public decimal Volume { get; set; }
 
         [JsonProperty ("openTime")]
-        public DateTimeOffset OpenTime { get; set; }
+        public TimeStamp OpenTime { get; set; }
 
         [JsonProperty ("closeTime")]
-        public DateTimeOffset CloseTime { get; set; }
+        public TimeStamp CloseTime { get; set; }
 
         // TODO: CHECK FRIST OR FIRST, FRIST IN DOCUMENTATION 
         [JsonProperty ("fristId")]

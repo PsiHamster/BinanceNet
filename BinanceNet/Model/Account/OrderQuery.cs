@@ -1,5 +1,6 @@
 ﻿using System;
 using BinanceNet.Enums;
+using BinanceNet.Utils;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
@@ -49,7 +50,7 @@ namespace BinanceNet.Model.Account {
         public decimal IcebergQuantity { get; set; }
 
         [JsonProperty ("time")]
-        public DateTimeOffset Timestamp { get; set; }
+        public TimeStamp Timestamp { get; set; }
     }
 }
 
