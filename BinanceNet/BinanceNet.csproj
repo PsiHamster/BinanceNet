@@ -46,9 +46,7 @@
     <Compile Include="Categories\IAccount.cs" />
     <Compile Include="Categories\ICandleSticks.cs" />
     <Compile Include="Categories\IDepthBook.cs" />
-    <Compile Include="Categories\IOrderBook.cs" />
     <Compile Include="Categories\ITradeHistory.cs" />
-    <Compile Include="Categories\OrderBook.cs" />
     <Compile Include="Categories\TradeHistory.cs" />
     <Compile Include="Enums\ExecutionType.cs" />
     <Compile Include="Enums\KlineInterval.cs" />
@@ -91,6 +89,7 @@
     <Compile Include="Model\TradeHistory\TradeHistoryData.cs" />
     <Compile Include="Model\DepthBook\DepthBookUpdateArgs.cs" />
     <Compile Include="Utils\ObjectToArrayConverter.cs" />
+    <Compile Include="Utils\RequestType.cs" />
     <Compile Include="Utils\TimeStamp.cs" />
     <Compile Include="Utils\WebProxy.cs" />
     <Compile Include="Utils\IWebRequester.cs" />
@@ -104,6 +103,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

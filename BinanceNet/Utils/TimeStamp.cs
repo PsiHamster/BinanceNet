@@ -16,6 +16,23 @@ namespace BinanceNet.Utils {
             Time = DateTimeOffset.FromUnixTimeMilliseconds(unixTimeMs);
         }
 
+        /// <summary>
+        /// Method returns current timestamp in server time. You need call <see cref="SetTimeStampCorrection"/> before it.
+        /// </summary>
+        public static TimeStamp CurrentTimeStamp()
+            => DateTimeOffset.Now.ToUnixTimeMilliseconds() - TimeStampCorrection;
+
+        public static long TimeStampCorrection { get; set; }
+
+        /// <summary>
+        /// Set correction between program and server time.
+        /// </summary>
+        /// <param name="serverTime"></param>
+        public static void SetTimeStampCorrection(TimeStamp serverTime)
+        {
+            TimeStampCorrection = DateTimeOffset.Now.ToUnixTimeMilliseconds() - serverTime.UnixTime;
+        }
+
         public static implicit operator TimeStamp(string s)
             => new TimeStamp(long.Parse(s));
 

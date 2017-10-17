@@ -9,8 +9,10 @@ using BinanceNet.Enums;
 namespace BinanceNet.Utils {
     public interface IWebRequester {
         IWebProxy WebProxy { get; set; }
-
-        Task<T> SendWebRequestAsync<T>(string method, Dictionary<string, object> parameters = null,
-            SecurityType securityType = SecurityType.None);
+        
+        Task<T> SendWebRequestAsync<T>(string address, T query,
+            SecurityType securityType = SecurityType.None,
+            RequestType requestType = RequestType.GET,
+            string secretKey = null);
     }
 }

@@ -8,7 +8,7 @@ namespace BinanceNet.Model.Account {
     // TODO: Documentation
 
     [JsonObject (MemberSerialization.OptIn)]
-    public struct NewOrderRequest {
+    public class NewOrderRequest {
 
         [JsonProperty ("symbol"), JsonRequired]
         public string Symbol { get; set; }
@@ -17,13 +17,13 @@ namespace BinanceNet.Model.Account {
         [JsonConverter(typeof(StringEnumConverter))]
         public OrderSide OrderSide { get; set; }
 
-        [JsonProperty ("type"), JsonRequired]
+        [JsonProperty("type"), JsonRequired]
         [JsonConverter(typeof(StringEnumConverter))]
-        public OrderType Type { get; set; }
+        public OrderType Type { get; set; } = OrderType.LIMIT;
 
-        [JsonProperty ("timeInForce"), JsonRequired]
+        [JsonProperty("timeInForce"), JsonRequired]
         [JsonConverter(typeof(StringEnumConverter))]
-        public TimeInForce TimeInForce { get; set; }
+        public TimeInForce TimeInForce { get; set; } = TimeInForce.GTC;
 
         [JsonProperty ("quantity"), JsonRequired]
         public decimal Quantity { get; set; }
@@ -52,7 +52,10 @@ namespace BinanceNet.Model.Account {
         [JsonProperty ("icebergOnly")]
         public decimal? IcebergOnly { get; set; }
 
-        [JsonProperty ("timestamp"), JsonRequired]
-        public TimeStamp Timestamp { get; set; }
+        /// <summary>
+        /// Timestamp. Automaticly sets if <see cref="TimeStamp.SetTimeStampCorrection"/> was called
+        /// </summary>
+        [JsonProperty("timestamp"), JsonRequired]
+        public TimeStamp Timestamp { get; set; } = TimeStamp.CurrentTimeStamp();
     }
 }
