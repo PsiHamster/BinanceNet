@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 using BinanceNet.Enums;
 using System.Security.Cryptography;
 using System.Threading;
+using System.Web;
+using BinanceNet.Model;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
@@ -16,30 +18,43 @@ namespace BinanceNet.Utils {
         public IWebProxy WebProxy { get; set; }
         
         public async Task<T> SendWebRequestAsync<T>(string address, object queryObject = null, SecurityType securityType = SecurityType.None,
-            RequestType requestType = RequestType.GET, string apiKey = null, string secretKey = null) {
+            HttpMethod requestType = null, string apiKey = null, string secretKey = null) {
+            requestType = requestType ?? HttpMethod.Get;
 
-            string query = queryObject ??;
-            if (securityType != SecurityType.None) {
+            // Adding "?" to query to do not check on empty query
+            string query = queryObject != null ? "?" + GenerateQueryString(queryObject) : "";
+            address += query;
+
+            if (securityType != SecurityType.None)
+            {
                 client.DefaultRequestHeaders.Clear();
-                var e = new HttpClient();
+
             }
             
+            var request = new HttpRequestMessage() {
+                RequestUri = new Uri(address),
+                Method = requestType
+            };
 
-            if (requestType == RequestType.GET) {
-                var responseString = await client.GetStringAsync(address+"?"+query);
+
+            if (requestType == HttpMethod.Get) {
+                var responseString = await client.GetStringAsync(address+query);
             }
         }
 
-        private static string GenerateQueryString(object request)
-        {
-            if (request == null)
-            {
-                throw new System.Exception("No request data provided - query string can't be created");
-            }
-            //TODO: Refactor to not require double JSON loop
-            var obj = (JObject)JsonConvert.DeserializeObject(JsonConvert.SerializeObject(request, _settings));
+        /// <inheritdoc/>
+        public event EventHandler<ReceiveErrorEventArgs> OnReceiveError;
 
-            return String.Join("&", obj.Children()
+        private static string GenerateQueryString(object data)
+        {
+            if (data == null)
+            {
+                throw new ArgumentException("Data cannot be null");
+            }
+
+            var obj = (JObject)JsonConvert.DeserializeObject(JsonConvert.SerializeObject(data));
+
+            return string.Join("&", obj.Children()
                 .Cast<JProperty>()
                 .Select(j => j.Name + "=" + HttpUtility.UrlEncode(j.Value.ToString())));
         }

@@ -89,7 +89,6 @@
     <Compile Include="Model\TradeHistory\TradeHistoryData.cs" />
     <Compile Include="Model\DepthBook\DepthBookUpdateArgs.cs" />
     <Compile Include="Utils\ObjectToArrayConverter.cs" />
-    <Compile Include="Utils\RequestType.cs" />
     <Compile Include="Utils\TimeStamp.cs" />
     <Compile Include="Utils\WebProxy.cs" />
     <Compile Include="Utils\IWebRequester.cs" />
@@ -104,6 +103,7 @@
     <Reference Include="System" />
     <Reference Include="System.Net" />
     <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
